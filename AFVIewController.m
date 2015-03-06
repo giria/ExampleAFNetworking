@@ -23,40 +23,6 @@
 static NSString * const BaseURLString = @"http://www.raywenderlich.com/demos/weather_sample/";
 
 
-//- (IBAction)jsonTapped:(id)sender
-//{
-//    // 1
-//    NSString *string = [NSString stringWithFormat:@"%@weather.php?format=json", BaseURLString];
-//    NSURL *url = [NSURL URLWithString:string];
-//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-//    
-//    // 2
-//    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-//    operation.responseSerializer = [AFJSONResponseSerializer serializer];
-//    
-//    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        
-//        // 3
-//        self.weather = (NSDictionary *)responseObject;
-//        self.title = @"JSON Retrieved";
-//        [self.tableView reloadData];
-//        
-//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        
-//        // 4
-//        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Retrieving Weather"
-//                                                            message:[error localizedDescription]
-//                                                           delegate:nil
-//                                                  cancelButtonTitle:@"Ok"
-//                                                  otherButtonTitles:nil];
-//        [alertView show];
-//    }];
-//    
-//    // 5
-//    [operation start];
-//    
-//    
-//}
 
 - (void)viewDidLoad {
     // 1
@@ -123,13 +89,31 @@ static NSString * const BaseURLString = @"http://www.raywenderlich.com/demos/wea
     
     switch (indexPath.section) {
         case 0: {
-            daysWeather = [self.weather currentCondition];
+            //daysWeather = [self.weather currentCondition];
+            // Without categories
+            NSDictionary * dict_data = self.weather[@"data"];
+            NSArray *ar = dict_data[@"current_condition"];
+            cell.backgroundColor = [UIColor redColor];
+            
+            daysWeather = ar[indexPath.row];
+            // end without categories
+            
+            
             break;
         }
             
         case 1: {
-            NSArray *upcomingWeather = [self.weather upcomingWeather];
-            daysWeather = upcomingWeather[indexPath.row];
+            
+            // Without categories
+             NSDictionary * dict_data = self.weather[@"data"];
+             NSArray *ar = dict_data[@"weather"];
+             daysWeather = ar[indexPath.row];
+            
+            //end without categories
+      
+            
+//            NSArray *upcomingWeather = [self.weather upcomingWeather];
+//            daysWeather = upcomingWeather[indexPath.row];
             break;
         }
             
