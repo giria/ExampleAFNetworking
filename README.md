@@ -4,6 +4,8 @@ http://www.raywenderlich.com/59255/afnetworking-2-0-tutorial
 
 This example uses the endpoint:
 
+![](json.png?raw=true)
+
 
 Inline-style: 
 ![image](https://www.dropbox.com/s/h3m2haucb1u7woz/Screenshot%202015-03-06%2016.47.33.png?dl=0 "Logo Title Text 1")
