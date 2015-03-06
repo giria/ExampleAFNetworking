@@ -6,7 +6,7 @@ This example uses the endpoint:
 
 
 Inline-style: 
-![alt text](https://www.dropbox.com/s/h3m2haucb1u7woz/Screenshot%202015-03-06%2016.47.33.png?dl=0 "Logo Title Text 1")
+![image](https://www.dropbox.com/s/h3m2haucb1u7woz/Screenshot%202015-03-06%2016.47.33.png?dl=0 "Logo Title Text 1")
 
 [I'm an inline-style link](https://www.dropbox.com/s/h3m2haucb1u7woz/Screenshot%202015-03-06%2016.47.33.png?dl=0)
 
